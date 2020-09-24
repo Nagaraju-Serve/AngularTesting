@@ -1,0 +1,72 @@
+<hr />
+<mat-toolbar color="primary">
+  <div>Angular Material</div>
+  <div>
+    <span>Home</span>
+    <span>About</span>
+    <span>Contact</span>
+    <span>Services</span>
+  </div>
+</mat-toolbar>
+<h1>Menu Component</h1>
+<hr />
+
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
+  <button mat-menu-item>BackEnd</button>
+</mat-menu>
+<button
+  mat-raised-button
+  disableRipple
+  color="primary"
+  [matMenuTriggerFor]="appMenu"
+>
+  Menu
+</button>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>React</button>
+  <button mat-menu-item>Vue</button>
+</mat-menu>
+
+<mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Hobby is {{ hobby }}</button>
+    <button mat-menu-item>Log Out {{ name }}</button>
+  </ng-template>
+</mat-menu>
+<button
+  mat-raised-button
+  [matMenuTriggerData]="{ name: 'Angular', hobby: 'UI && Typescript' }"
+  [matMenuTriggerFor]="lazyMenu"
+>
+  Angular
+</button>
+<button
+  mat-raised-button
+  [matMenuTriggerData]="{ name: 'Angular Material', hobby: 'Teaching' }"
+  [matMenuTriggerFor]="lazyMenu"
+>
+  Angular Material
+</button>
+<h1>SideNav Component</h1>
+<hr />
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    (opened)="log('Closed')"
+    (closed)="log('Opened')"
+    mode="side"
+    [(opened)]="opened"
+    >Sidenav</mat-sidenav
+  >
+  <mat-sidenav-content
+    >Main
+    <button (click)="opened = !opened">Toggle Sidenav</button>
+    <button (click)="sidenav.open()">Open</button>
+    <button (click)="sidenav.close()">Close</button>
+    <button (click)="sidenav.toggle()">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

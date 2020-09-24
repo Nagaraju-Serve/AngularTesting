@@ -1,0 +1,41 @@
+<hr />
+<h1>AutoComplete Component</h1>
+
+<form>
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      [matAutocomplete]="auto"
+      [formControl]="myControl"
+    />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}</mat-option
+      >
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<hr />
+<h1>Select Component</h1>
+
+<mat-form-field color="accent">
+  <mat-label>Topic</mat-label>
+  <mat-select [(value)]="selectedValue" multiple>
+    <mat-option>None</mat-option>
+    <mat-optgroup label="Web">
+      <mat-option value="Angular">Angular</mat-option>
+      <mat-option value="React">React</mat-option>
+      <mat-option value="Vue">Vue</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="Mobile">
+      <mat-option value="ionic">Ionic</mat-option>
+      <mat-option value="reactnative">React Native</mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+{{ selectedValue }}

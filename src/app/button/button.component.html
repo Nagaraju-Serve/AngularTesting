@@ -1,0 +1,45 @@
+<hr />
+
+<h1>Buttons Component</h1>
+<div>
+  <button mat-button>Hello World</button>
+  <button mat-raised-button>Hello World</button>
+  <button mat-flat-button>Hello World</button>
+  <button mat-stroked-button>Hello World</button>
+</div>
+
+<div>
+  <button mat-icon-button>Icon</button>
+  <button mat-fab>Fab</button>
+  <button mat-mini-fab>miniFab</button>
+</div>
+
+<div>
+  <button color="primary" mat-button>Click Me!</button>
+  <button color="accent" mat-button>Click Me!</button>
+  <button color="warn" disableRipple mat-button>Click Me!</button>
+  <button color="primary" mat-raised-button>Click Me!</button>
+  <button color="accent" mat-raised-button>Click Me!</button>
+  <button color="warn" disableRipple mat-raised-button>Click Me!</button>
+  <button color="primary" mat-flat-button>Click Me!</button>
+  <button color="accent" mat-flat-button>Click Me!</button>
+  <button color="warn" disableRipple mat-flat-button>Click Me!</button>
+  <button color="primary" mat-stroked-button>Click Me!</button>
+  <button color="accent" mat-stroked-button>Click Me!</button>
+  <button color="warn" disableRipple mat-stroked-button>Click Me!</button>
+</div>
+
+<div>
+  <mat-button-toggle #toggleBtn checked diasableRipple disabled
+    >Toggle</mat-button-toggle
+  >
+  {{ toggleBtn.checked }}
+</div>
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="react">React</mat-button-toggle>
+    <mat-button-toggle value="vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{ toggleGroup.value }}
+</div>

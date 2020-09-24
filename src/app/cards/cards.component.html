@@ -1,0 +1,47 @@
+<hr />
+<h1>Steppers Component</h1>
+
+<mat-vertical-stepper linear>
+  <mat-step label="Shipping Address" completed="true"></mat-step>
+  <mat-step label="Billing Address" completed="false" optional>
+    <p>Billing Adress details.</p>
+    <div>
+      <button mat-raised-button color="primary" matStepperPrevious>Back</button
+      ><button mat-raised-button color="accent" matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Placing Order" completed="false"></mat-step>
+</mat-vertical-stepper>
+
+<mat-horizontal-stepper linear>
+  <mat-step label="Shipping Address" completed="true"></mat-step>
+  <mat-step label="Billing Address" completed="false">
+    <p>Billing Adress details.</p>
+    <div>
+      <button mat-raised-button color="primary" matStepperPrevious>Back</button
+      ><button mat-raised-button color="accent" matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Placing Order" completed="false"></mat-step>
+</mat-horizontal-stepper>
+
+<hr />
+<h1>Tabs Component</h1>
+
+<mat-tab-group #tabRef (selectedTabChange)="logChange()">
+  <mat-tab label="Angular"> Angular Content</mat-tab
+  ><mat-tab label="React">React Content </mat-tab
+  ><mat-tab label="Vue"> Vue Content</mat-tab>
+</mat-tab-group>
+{{ tabRef.selectedIndex }}
+<hr />
+<h1>Cards Component</h1>
+
+<mat-card>Basic Card</mat-card>
+<mat-card>
+  <mat-card-title> Card Title </mat-card-title>
+  <mat-card-content> This Is card content. </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button>Login</button>
+  </mat-card-actions>
+</mat-card>

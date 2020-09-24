@@ -1,3 +1,27 @@
 <h1>Hello</h1>
-
+<app-select></app-select>
+<app-input></app-input>
+<app-cards></app-cards>
+<app-icon></app-icon>
+<app-list></app-list>
+<app-toolbar></app-toolbar>
+<app-progress-spinner></app-progress-spinner>
+<app-button></app-button>
+<app-badges></app-badges>
 <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Message</mat-label>
+    <input
+      matInput
+      #message
+      maxlength="256"
+      placeholder="Ex. I need help with..."
+    />
+    <mat-hint align="start"
+      ><strong>Don't disclose personal info</strong>
+    </mat-hint>
+    <mat-hint align="end">{{ message.value.length }} / 256</mat-hint>
+  </mat-form-field>
+</form>
